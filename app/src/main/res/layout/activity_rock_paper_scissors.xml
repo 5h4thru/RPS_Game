@@ -1,0 +1,98 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+
+    <TextView
+        android:id="@+id/txtSpeechInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonPaper"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="53dp"
+        android:text="Hello"
+        android:textColor="@color/colorPrimary"
+        android:textSize="26dp"
+        android:textStyle="normal" />
+
+    <ImageView
+        android:id="@+id/imageViewAnswerUser"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/txtSpeechInput"
+        android:layout_marginRight="22dp"
+        android:layout_marginTop="22dp"
+        android:layout_toStartOf="@+id/txtSpeechInput"
+        android:src="@drawable/ic_launcher" />
+
+    <ImageView
+        android:id="@+id/ImageViewAnswerAndroid"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/txtSpeechInput"
+        android:layout_marginLeft="22dp"
+        android:layout_toEndOf="@+id/txtSpeechInput"
+        android:src="@drawable/ic_launcher" />
+
+    <Button
+        android:id="@+id/buttonRock"
+        android:layout_width="20pt"
+        android:layout_height="20pt"
+        android:layout_alignTop="@+id/buttonPaper"
+        android:layout_toStartOf="@+id/textView"
+        android:background="@drawable/rock" />
+
+    <Button
+        android:id="@+id/buttonPaper"
+        android:layout_width="20pt"
+        android:layout_height="20pt"
+        android:layout_alignStart="@+id/btnSpeak"
+        android:layout_alignTop="@+id/buttonScissors"
+        android:background="@drawable/paper" />
+
+    <Button
+        android:id="@+id/buttonScissors"
+        android:layout_width="20pt"
+        android:layout_height="20pt"
+        android:layout_above="@+id/btnSpeak"
+        android:layout_marginBottom="99dp"
+        android:layout_toStartOf="@+id/imageButtonHome"
+        android:background="@drawable/scissors" />
+
+
+    <ImageButton
+        android:id="@+id/btnSpeak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageButtonHome"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/circular_button"
+        android:src="@drawable/ic_mic" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageButtonHome"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:text="@string/tap_on_mic"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:textStyle="normal" />
+
+    <ImageButton
+        android:id="@+id/imageButtonHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_launcher" />
+
+
+</RelativeLayout>
