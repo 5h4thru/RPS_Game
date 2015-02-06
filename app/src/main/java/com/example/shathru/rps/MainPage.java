@@ -2,6 +2,8 @@ package com.example.shathru.rps;
 
 import android.content.Intent;
 import android.graphics.Outline;
+import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,6 +11,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.media.MediaPlayer;
+import android.support.v7.widget.Toolbar;
+
+import com.example.shathru.rps.NavigationDrawerFragment;
 
 
 public class MainPage extends ActionBarActivity implements View.OnClickListener {
@@ -19,7 +24,8 @@ public class MainPage extends ActionBarActivity implements View.OnClickListener 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_page);
+        //setContentView(R.layout.activity_main_page);
+        setContentView(R.layout.activity_main_appbar);
         buttonToStart = (Button) findViewById(R.id.play);
         buttonToStart.setOnClickListener(this);
 
@@ -28,7 +34,20 @@ public class MainPage extends ActionBarActivity implements View.OnClickListener 
         backgroundMusic.setLooping(true);
         backgroundMusic.start();
 
+        //Toolbar
+        Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+        //Will show the home button in the navigation drawer
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        //Starting the navigation Drawer
+        NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment)
+                getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
+        drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout)findViewById(R.id.drawer_layout), toolbar);
+
+
     }
+
 
     //Tell the game when to stop the backgroundMusic because nowhere we've mentioned the app when to stop.
     //This will be the last class that will run when the application is closed.
