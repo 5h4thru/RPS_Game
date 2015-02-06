@@ -18,9 +18,10 @@ import com.example.shathru.rps.NavigationDrawerFragment;
 
 public class MainPage extends ActionBarActivity implements View.OnClickListener {
 
-    MediaPlayer backgroundMusic;
+    //MediaPlayer backgroundMusic;
 
     Button buttonToStart;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,9 +31,9 @@ public class MainPage extends ActionBarActivity implements View.OnClickListener 
         buttonToStart.setOnClickListener(this);
 
         //Background Music
-        backgroundMusic = MediaPlayer.create(MainPage.this, R.raw.rock);
+       /* backgroundMusic = MediaPlayer.create(MainPage.this, R.raw.theme);
         backgroundMusic.setLooping(true);
-        backgroundMusic.start();
+        backgroundMusic.start();*/
 
         //Toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.app_bar);
@@ -43,23 +44,23 @@ public class MainPage extends ActionBarActivity implements View.OnClickListener 
         //Starting the navigation Drawer
         NavigationDrawerFragment drawerFragment = (NavigationDrawerFragment)
                 getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
-        drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout)findViewById(R.id.drawer_layout), toolbar);
+        drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), toolbar);
 
 
     }
 
+    /*
+        //Tell the game when to stop the backgroundMusic because nowhere we've mentioned the app when to stop.
+        //This will be the last class that will run when the application is closed.
 
-    //Tell the game when to stop the backgroundMusic because nowhere we've mentioned the app when to stop.
-    //This will be the last class that will run when the application is closed.
+        @Override
+        protected void onPause() {
+            super.onPause();
+            backgroundMusic.release();
+            finish();
+        }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-        backgroundMusic.release();
-        finish();
-    }
-
-
+    */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

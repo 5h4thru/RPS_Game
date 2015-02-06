@@ -68,7 +68,7 @@ public class RockPaperScissors extends ActionBarActivity implements OnClickListe
 
         //Initialize the sounds variables
         sounds = new SoundPool(10, AudioManager.STREAM_MUSIC, 0);
-        rock = sounds.load(getApplicationContext(), R.raw.rock, 1);
+        rock = sounds.load(getApplicationContext(), R.raw.theme, 1);
         //
 
         super.onCreate(savedInstanceState);
